@@ -19,6 +19,13 @@ const router = new VueRouter({
     }
 });
 
+router.beforeEach((to, from, next) =>{
+    console.log('global beforeEach');
+    next(); //continue
+    // next(false) // abort
+    // next('/path') // go to the path
+});
+
 new Vue({
     el: '#app',
     router,
